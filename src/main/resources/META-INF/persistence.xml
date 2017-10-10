@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+     <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+            
+            <!--DRIVER CONFIG-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"></property>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            
+            <!--DATABASE CREATION--> 
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mozdevz?createDatabaseIfNotExist=true&amp;connectionCollation=utf8_general_ci"/>
+            
+            <!--CONNECTION CONFIG-->
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value=""/>
+
+        </properties>
+    </persistence-unit>
+</persistence>

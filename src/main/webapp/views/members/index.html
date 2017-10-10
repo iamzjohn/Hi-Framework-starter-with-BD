@@ -1,0 +1,86 @@
+<div>
+    <div>
+        <form>
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First Name" ng-model="user.firstname">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last Name" ng-model="user.lastname">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary btn-block" ng-click="addUser(user)">Add</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div>
+        <table class="table table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in members" ng-click="editUser(member)">
+                    <th scope="row">{{$index + 1}}</th>
+                    <td>{{member.firstname}}</td>
+                    <td>{{member.lastname}}</td>
+                    <td>@{{member.username}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit user {{aux_user.username}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group row">
+                        <label for="staticUserName" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="staticUserName" value="{{aux_user.username}}">
+                        </div>
+                    </div>
+                   <div class="form-group row">
+                        <label for="inputFirstName" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text"  class="form-control" id="inputFirstName" ng-model="aux_user.firstname">
+                        </div>
+                    </div>
+                     <div class="form-group row">
+                        <label for="inputLastName" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text"  class="form-control" id="inputLastName" ng-model="aux_user.lastname">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteUser(aux_user)">Delete</button>
+                <button type="button" class="btn btn-primary" ng-click="updateUser(aux_user)">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
