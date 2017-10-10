@@ -4,7 +4,7 @@
       http://hi-framework.org/xml/Schema_1_1_0.xsd">
 		
 	<web>
-	        <!--Redirect to hello/world when accessing the root path: / -->
+	        <!--Redirect to members/index when accessing the root path: / -->
             <welcome-url>members/index</welcome-url> 
 	</web>
 

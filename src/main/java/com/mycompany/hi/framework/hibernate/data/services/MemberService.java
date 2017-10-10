@@ -55,7 +55,7 @@ public class MemberService {
     
     public Member read(int id){
         try {
-            return memberDAO.getMemberById(id);
+            return memberDAO.find(id);
         } catch (Exception ex) {
             Logger.getLogger(MemberService.class.getName()).log(Level.SEVERE, null, ex);
             return null;
